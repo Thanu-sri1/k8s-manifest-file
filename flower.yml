@@ -1,0 +1,13 @@
+piVersion: v1
+kind: Pod
+metadata:
+  name: flower-pod
+  namespace: thanu-ns
+  labels:
+    app: flower
+spec:
+  containers:
+    - name: flower-container
+      image: thanusri22/flower:v1.1.0
+      ports:
+        - containerPort: 3015
