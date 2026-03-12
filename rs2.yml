@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: flower-rs 
+  namespace: thanu-ns
+  labels:
+    app: flower
+spec: 
+  replicas: 5
+  selector: 
+    matchLabels:
+      app: web
+  template:
+    metadata:
+      labels:
+        app: web
+    spec: 
+      containers:
+        - name: flipkart-container
+          image: muralisocial123/flipkart-app-web:v1.1.0
+
+          ports:
+            - containerPort: 80
