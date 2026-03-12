@@ -4,9 +4,14 @@ metadata:
   name: ey-cart-deploy
   namespace: thanu-ns
   labels:
-    app: cart
+    app: ey-cart
 spec: 
-  replicas: 5
+  replicas: 3
+  stratergy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
+      maxSurge: 1
   selector: 
     matchLabels:
       app: ey
