@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fitness-deployment
+  namespace: thanu-ns
+  labels:
+    app: fitness
+spec: 
+  replicas: 8
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 2
+      maxSurge: 2
+  selector: 
+    matchLabels:
+      app: fit
+  template:
+    metadata:
+      labels:
+        app: fit
+    spec: 
+      containers:
+        - name: fitness-container
+          image: muralisocial123/kyndrl-flower-app:v1.1.0
+          ports:
+            - containerPort: 3015
