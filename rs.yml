@@ -5,18 +5,18 @@ metadata:
   namespace: thanu-ns
   labels:
     app: cart
-spec: #it defines the behaviour of the replicaset
+spec: 
   replicas: 3
-  selector: #it defines how the replicaset finds which pod to manage
+  selector: #it defines how the replicaset 
     matchLabels:
       app: web
   template: #It contains pod definition
     metadata:
       labels:
         app: web
-spec: # It contains the container definition
-  containers:
-    - name: ey-cart-container
-      image:  muralisocial123/ey-cart:v1.1.0
-      ports:
-        - containerPort: 3000
+  spec: # It contains the container definition
+    containers:
+      - name: ey-cart-container
+        image:  muralisocial123/ey-cart:v1.1.0
+        ports:
+          - containerPort: 3000

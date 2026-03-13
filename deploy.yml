@@ -23,6 +23,5 @@ spec:
       containers:
         - name: ey-cart-container
           image: praveenx03/retail:v1.1.0
-
           ports:
             - containerPort: 80
