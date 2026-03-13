@@ -38,5 +38,5 @@ spec:
     - port: 3001 #it is a service port number we are using app to the internet 
       targetPort: 3000
       protocol: TCP
-  type: ClusterIP     
+  type: ClusterIP   
     
